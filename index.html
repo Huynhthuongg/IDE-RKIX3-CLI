@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Trang tài liệu AndroidX được thiết kế theo phong cách tối giản của agents.md, tập trung vào các lệnh thiết lập, build, test và đóng góp."
+    />
+    <title>AndroidX Docs — RKIX Studio AI</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="site-header" aria-label="Thanh điều hướng chính">
+        <a class="brand" href="#top" aria-label="AndroidX Docs Home">
+          <span class="brand-mark">AX</span>
+          <span>AndroidX Docs</span>
+        </a>
+        <nav class="nav-links" aria-label="Liên kết tài liệu">
+          <a href="#setup">Thiết lập</a>
+          <a href="#studio">Android Studio</a>
+          <a href="#build">Build</a>
+          <a href="#contribute">Đóng góp</a>
+        </nav>
+        <a class="github-link" href="https://github.com/androidx/androidx" target="_blank" rel="noreferrer">GitHub</a>
+      </header>
+
+      <main id="top">
+        <section class="hero section-grid" aria-labelledby="hero-title">
+          <div class="hero-copy">
+            <p class="eyebrow">RKIX Studio AI · Android Jetpack</p>
+            <h1 id="hero-title">AndroidX Contribution Guide</h1>
+            <p class="hero-lede">
+              Một trang docs tiếng Việt cô đọng cho quy trình lấy source, mở Android Studio,
+              build, kiểm thử và upload thay đổi AndroidX — trình bày theo phong cách sạch,
+              tập trung và có code card giống agents.md.
+            </p>
+            <div class="hero-actions" aria-label="Hành động chính">
+              <a class="button primary" href="#quickstart">Bắt đầu nhanh</a>
+              <a class="button secondary" href="https://chromium.googlesource.com/aosp/platform/frameworks/support/+/refs/heads/androidx-main/README.md" target="_blank" rel="noreferrer">Tài liệu gốc</a>
+            </div>
+          </div>
+
+          <aside class="code-card" aria-label="Lệnh quickstart AndroidX">
+            <div class="window-dots" aria-hidden="true"><span></span><span></span><span></span></div>
+            <pre><code># AndroidX quickstart
+mkdir androidx-main
+cd androidx-main
+
+repo init -u https://android.googlesource.com/platform/manifest \
+  -b androidx-main \
+  --partial-clone \
+  --clone-filter=blob:limit=10M
+
+repo sync -j8 -c
+cd frameworks/support
+ANDROIDX_PROJECTS=MAIN ./gradlew studio</code></pre>
+          </aside>
+        </section>
+
+        <section class="stats-strip" aria-label="Điểm nổi bật">
+          <article>
+            <strong>MAIN</strong>
+            <span>Project set khuyến nghị cho phần lớn thư viện Jetpack.</span>
+          </article>
+          <article>
+            <strong>repo sync</strong>
+            <span>Lệnh đồng bộ mã nguồn tương tự tinh thần của git fetch.</span>
+          </article>
+          <article>
+            <strong>createArchive</strong>
+            <span>Tạo Maven artifacts cục bộ để thử trong ứng dụng riêng.</span>
+          </article>
+        </section>
+
+        <section id="why" class="content-section two-column">
+          <div>
+            <p class="eyebrow">Vì sao cần trang này?</p>
+            <h2>README dài được chuyển thành luồng thao tác dễ quét.</h2>
+          </div>
+          <div class="prose">
+            <p>
+              Tài liệu AndroidX có nhiều bước rời rạc: cấu hình Git, tạo checkout, đồng bộ
+              bằng repo, mở đúng Android Studio, build toàn bộ thư viện, chạy test và gửi thay đổi
+              lên Gerrit. Trang này gom các bước đó thành các khối độc lập để lập trình viên hoặc
+              AI coding agent có thể làm theo nhanh hơn.
+            </p>
+          </div>
+        </section>
+
+        <section id="quickstart" class="content-section">
+          <div class="section-heading">
+            <p class="eyebrow">Quickstart</p>
+            <h2>4 bước đầu tiên</h2>
+          </div>
+          <div class="steps-grid">
+            <article class="step-card" id="setup">
+              <span class="step-number">01</span>
+              <h3>Cấu hình Git</h3>
+              <p>Đặt tên và email để commit trong checkout AndroidX.</p>
+              <pre><code>git config --global user.name "Your Name"
+git config --global user.email "you@example.com"</code></pre>
+            </article>
+            <article class="step-card">
+              <span class="step-number">02</span>
+              <h3>Tạo checkout</h3>
+              <p>Khởi tạo repo AndroidX bằng branch <code>androidx-main</code> và clone filter.</p>
+              <pre><code>mkdir androidx-main
+cd androidx-main
+repo init -u https://android.googlesource.com/platform/manifest \
+  -b androidx-main --partial-clone \
+  --clone-filter=blob:limit=10M</code></pre>
+            </article>
+            <article class="step-card">
+              <span class="step-number">03</span>
+              <h3>Đồng bộ mã nguồn</h3>
+              <p>Tải phần mã cần thiết cho quá trình build và phát triển AndroidX.</p>
+              <pre><code>repo sync -j8 -c</code></pre>
+            </article>
+            <article class="step-card" id="studio">
+              <span class="step-number">04</span>
+              <h3>Mở Android Studio</h3>
+              <p>Dùng wrapper Gradle để mở phiên bản Studio được khuyến nghị.</p>
+              <pre><code>cd path/to/checkout/frameworks/support
+ANDROIDX_PROJECTS=MAIN ./gradlew studio</code></pre>
+            </article>
+          </div>
+        </section>
+
+        <section id="build" class="content-section two-column">
+          <div class="sticky-title">
+            <p class="eyebrow">Build & kiểm thử</p>
+            <h2>Tạo artifacts, chạy test và kiểm tra sample app.</h2>
+          </div>
+          <div class="info-list">
+            <article>
+              <h3>Build hoàn chỉnh</h3>
+              <p>Chạy Gradle từ thư mục <code>frameworks/support</code> để build toàn bộ thư viện.</p>
+              <pre><code>./gradlew createArchive</code></pre>
+            </article>
+            <article>
+              <h3>Dùng Maven local trong app của bạn</h3>
+              <p>Thêm repository build ra vào đầu danh sách repositories của project app.</p>
+              <pre><code>maven { url '/path/to/checkout/out/androidx/build/support_repo/' }</code></pre>
+            </article>
+            <article>
+              <h3>Chạy một test cụ thể</h3>
+              <p>Mở file test trong Android Studio, nhấp chuột phải vào class hoặc method <code>@Test</code>, rồi chọn Run.</p>
+            </article>
+            <article>
+              <h3>Chạy sample app</h3>
+              <p>Các app thường có hậu tố <code>-integration-tests-testapp</code> hoặc dạng <code>support-*-demos</code>.</p>
+            </article>
+          </div>
+        </section>
+
+        <section id="contribute" class="content-section">
+          <div class="section-heading">
+            <p class="eyebrow">Đóng góp</p>
+            <h2>Từ nhánh làm việc đến review trên r.android.com</h2>
+          </div>
+          <div class="timeline">
+            <article>
+              <span>1</span>
+              <h3>Chuẩn bị tài khoản</h3>
+              <p>Tạo mật khẩu HTTPS và chấp thuận Google Contributor License Agreement trước lần upload đầu tiên.</p>
+              <a href="https://android-review.googlesource.com/new-password" target="_blank" rel="noreferrer">Tạo mật khẩu HTTPS</a>
+            </article>
+            <article>
+              <span>2</span>
+              <h3>Tạo nhánh và commit</h3>
+              <pre><code>repo start my_branch_name .
+# chỉnh sửa cần thiết
+git commit -a</code></pre>
+            </article>
+            <article>
+              <span>3</span>
+              <h3>Upload để review</h3>
+              <pre><code>repo upload --current-branch .</code></pre>
+            </article>
+            <article>
+              <span>4</span>
+              <h3>Thêm reviewer</h3>
+              <p>Mở r.android.com, đăng nhập và chọn reviewer phù hợp dựa trên lịch sử git hoặc file OWNERS.</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="content-section faq-section" aria-labelledby="faq-title">
+          <div class="section-heading">
+            <p class="eyebrow">FAQ</p>
+            <h2 id="faq-title">Các lưu ý hay gặp</h2>
+          </div>
+          <div class="faq-grid">
+            <details open>
+              <summary>Có những project set nào?</summary>
+              <p>Có thể dùng <code>ALL</code>, <code>MAIN</code>, <code>COMPOSE</code> hoặc <code>FLAN</code> qua biến <code>ANDROIDX_PROJECTS</code>.</p>
+            </details>
+            <details>
+              <summary>Khi Studio báo “Unregistered VCS root detected” thì sao?</summary>
+              <p>Chọn “Add root” để bật tích hợp Git cho Android Studio trong checkout AndroidX.</p>
+            </details>
+            <details>
+              <summary>Nếu thấy underline đỏ trong IDE?</summary>
+              <p>Chạy <strong>Build &gt; Clean Project</strong> trước khi tiếp tục điều tra lỗi thật.</p>
+            </details>
+            <details>
+              <summary>Binary dependencies nằm ở đâu?</summary>
+              <p>AndroidX lưu bản sao Gradle binary libraries trong <code>prebuilts/androidx/internal</code> và <code>prebuilts/androidx/external</code>.</p>
+            </details>
+          </div>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <p>Thiết kế tham khảo bố cục tối giản, code-first của agents.md.</p>
+        <a href="#top">Lên đầu trang ↑</a>
+      </footer>
+    </div>
+  </body>
+</html>
