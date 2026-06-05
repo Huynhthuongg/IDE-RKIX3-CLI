@@ -5,294 +5,233 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="RKIX3 system hub liên kết UI, repository, agent workflow, sandbox runtime và tài liệu AndroidX thành một bản đồ triển khai thống nhất."
+      content="RKIX3 GitHub-style root page mô phỏng trang repository để liên kết UI chính, agent, sandbox, workflow và tài liệu AndroidX."
     />
-    <title>RKIX3 System Hub</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
+    <title>RKIX3 / Rkix3.ai · GitHub System Page</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <div class="orb orb-one" aria-hidden="true"></div>
-    <div class="orb orb-two" aria-hidden="true"></div>
+    <a class="github-corner" href="https://github.com/RKIX3/Rkix3.ai" target="_blank" rel="noreferrer" aria-label="Mở RKIX3 trên GitHub">
+      <svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0 0h250v250" />
+        <path class="octo-arm" d="M127 110c-14-9-9-19-9-19 3-7 2-11 2-11-3-1-9 2-9 2-6-4-14-5-22-5s-16 1-22 5c0 0-6-3-9-2 0 0-1 4 2 11 0 0 5 10-9 19-12 8-19 18-19 31 0 40 28 49 57 49s57-9 57-49c0-13-7-23-19-31Z" />
+      </svg>
+    </a>
 
-    <div class="app-frame">
-      <aside class="sidebar" aria-label="RKIX3 navigation">
-        <a class="brand" href="#top" aria-label="RKIX3 System Hub">
-          <span class="brand-mark">R3</span>
-          <span>
-            <strong>RKIX3</strong>
-            <small>System Hub</small>
-          </span>
+    <header class="github-header" aria-label="GitHub style header">
+      <div class="header-left">
+        <a class="octocat" href="#top" aria-label="Trang đầu RKIX3">
+          <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 .2a8 8 0 0 0-2.5 15.6c.4.1.5-.2.5-.4v-1.5c-2.2.5-2.7-1-2.7-1-.4-.9-.9-1.1-.9-1.1-.7-.5.1-.5.1-.5.8.1 1.2.8 1.2.8.7 1.2 1.9.9 2.3.7.1-.5.3-.9.5-1.1-1.8-.2-3.6-.9-3.6-3.9 0-.9.3-1.6.8-2.2-.1-.2-.4-1 .1-2.1 0 0 .7-.2 2.2.8a7.8 7.8 0 0 1 4 0c1.5-1 2.2-.8 2.2-.8.5 1.1.2 1.9.1 2.1.5.6.8 1.3.8 2.2 0 3-1.8 3.7-3.6 3.9.3.3.6.8.6 1.6v2.1c0 .2.1.5.6.4A8 8 0 0 0 8 .2Z" /></svg>
         </a>
-        <nav class="side-nav" aria-label="Điều hướng trang">
-          <a href="#ecosystem">Ecosystem</a>
-          <a href="#architecture">Architecture</a>
-          <a href="#workflow">Workflow</a>
-          <a href="#androidx">AndroidX Docs</a>
-          <a href="#roadmap">Roadmap</a>
+        <label class="search-box">
+          <span>/</span>
+          <input type="search" value="RKIX3/Rkix3.ai" aria-label="Tìm kiếm repository" />
+        </label>
+        <nav class="global-nav" aria-label="GitHub global nav">
+          <a href="#repo-readme">README</a>
+          <a href="#ecosystem">Repos</a>
+          <a href="#actions">Actions</a>
+          <a href="#androidx">Docs</a>
         </nav>
-        <div class="sidebar-card">
-          <span class="pulse"></span>
-          <p>Ưu tiên chọn lọc: giữ phần giúp RKIX3 chạy được, deploy được, tự động hoá được.</p>
-        </div>
-      </aside>
+      </div>
+      <div class="header-actions" aria-label="Repository actions">
+        <a class="header-button" href="https://github.com/RKIX3/Rkix3.ai/issues" target="_blank" rel="noreferrer">Issues</a>
+        <a class="header-button primary" href="https://github.com/RKIX3/Rkix3.ai" target="_blank" rel="noreferrer">Open GitHub</a>
+      </div>
+    </header>
 
-      <main id="top" class="main-content">
-        <header class="topbar">
-          <span>AI-first · mobile-first · automation-first</span>
-          <a href="https://github.com/RKIX3/Rkix3.ai" target="_blank" rel="noreferrer">Main repo</a>
-        </header>
-
-        <section class="hero" aria-labelledby="hero-title">
-          <div class="hero-copy">
-            <p class="eyebrow">Unified RKIX3 workspace</p>
-            <h1 id="hero-title">Kết nối các repo thành một hệ thống phát triển RKIX3.</h1>
-            <p class="hero-lede">
-              Trang này không chỉ là docs AndroidX nữa. Nó là bản đồ UI cho RKIX3: lấy
-              app React/Vite làm lõi, AGENTS làm bộ não tạo dự án, sandbox làm runtime,
-              GitHub/GitHub Pages làm đường deploy và AndroidX docs làm mẫu quy trình
-              thư viện lớn có build/test/contribute rõ ràng.
-            </p>
-            <div class="hero-actions">
-              <a class="button button-primary" href="#architecture">Xem thiết kế hệ thống</a>
-              <a class="button button-ghost" href="#ecosystem">Mở bản đồ repo</a>
-            </div>
-          </div>
-
-          <aside class="command-panel" aria-label="RKIX3 command plan">
-            <div class="panel-top">
-              <span></span><span></span><span></span>
-              <strong>rkix3-plan.sh</strong>
-            </div>
-            <pre><code># Hợp nhất theo vai trò, không trộn bừa source
-core="RKIX3/Rkix3.ai"        # UI React/Vite
-agent="Huynhthuongg/AGENTS.md" # Project compiler
-runtime="Huynhthuongg/Sanbox"  # Sandbox/preview
-org="RKIX3/.github"          # profile + workflow
-library="AndroidX docs"      # quy trình build/test mẫu
-
-run RKIX3 → Agent → Sandbox → Build → Preview → Deploy</code></pre>
-          </aside>
-        </section>
-
-        <section class="signal-strip" aria-label="Tín hiệu ưu tiên RKIX3">
-          <article>
-            <strong>01</strong>
-            <span>Giữ lõi UI: AI Workspace, Code Studio, Build Center, Library Hub.</span>
-          </article>
-          <article>
-            <strong>02</strong>
-            <span>Ghép agent compiler để biến tài liệu, repo, README, OCR thành project chạy được.</span>
-          </article>
-          <article>
-            <strong>03</strong>
-            <span>Dùng sandbox để chạy build/test/preview tách biệt trước khi deploy.</span>
-          </article>
-        </section>
-
-        <section id="ecosystem" class="section">
-          <div class="section-heading">
-            <p class="eyebrow">Repository map</p>
-            <h2>Chọn đúng vai trò cho từng repo.</h2>
-            <p>
-              Thay vì cố gộp tất cả code vào một chỗ, mỗi repo được dùng như một module:
-              UI chính, agent spec, runtime sandbox, docs hub hoặc automation layer.
-            </p>
-          </div>
-
-          <div class="repo-grid">
-            <article class="repo-card featured">
-              <div>
-                <span class="status ready">Core</span>
-                <h3>RKIX3/Rkix3.ai</h3>
-                <p>Làm lõi giao diện: React/Vite app, 7 trang chính, data-driven cards, GitHub Pages workflow.</p>
-              </div>
-              <a href="https://github.com/RKIX3/Rkix3.ai" target="_blank" rel="noreferrer">Mở repo →</a>
-            </article>
-            <article class="repo-card">
-              <div>
-                <span class="status ready">Mirror</span>
-                <h3>Huynhthuongg/Rkix3.ai</h3>
-                <p>Dùng để đối chiếu source/branch cá nhân trước khi đưa thay đổi ổn định vào repo chính.</p>
-              </div>
-              <a href="https://github.com/Huynhthuongg/Rkix3.ai" target="_blank" rel="noreferrer">Mở repo →</a>
-            </article>
-            <article class="repo-card">
-              <div>
-                <span class="status build">Landing</span>
-                <h3>RKIX3/RKIX3</h3>
-                <p>Làm trang giới thiệu tổ chức/sản phẩm, command center và các demo public-facing.</p>
-              </div>
-              <a href="https://github.com/RKIX3/RKIX3" target="_blank" rel="noreferrer">Mở repo →</a>
-            </article>
-            <article class="repo-card">
-              <div>
-                <span class="status agent">Agent</span>
-                <h3>Huynhthuongg/AGENTS.md</h3>
-                <p>Chuẩn Project Compiler: nhận tài liệu, repo, README, OCR hoặc prompt và tạo project runnable.</p>
-              </div>
-              <a href="https://github.com/Huynhthuongg/AGENTS.md" target="_blank" rel="noreferrer">Mở repo →</a>
-            </article>
-            <article class="repo-card">
-              <div>
-                <span class="status agent">Agent</span>
-                <h3>Huynhthuongg/AGENTS.RKIX3</h3>
-                <p>Dùng làm lớp hướng dẫn riêng của RKIX3: convention, bảo mật, review, workflow đóng góp.</p>
-              </div>
-              <a href="https://github.com/Huynhthuongg/AGENTS.RKIX3" target="_blank" rel="noreferrer">Mở repo →</a>
-            </article>
-            <article class="repo-card">
-              <div>
-                <span class="status runtime">Runtime</span>
-                <h3>Huynhthuongg/Sanbox</h3>
-                <p>Ưu tiên làm môi trường chạy thử project, build log, preview app và self-healing process.</p>
-              </div>
-              <a href="https://github.com/Huynhthuongg/Sanbox" target="_blank" rel="noreferrer">Mở repo →</a>
-            </article>
-            <article class="repo-card">
-              <div>
-                <span class="status runtime">Template</span>
-                <h3>T-AITools/sandbox</h3>
-                <p>Giữ như sandbox template tối giản để thử GitHub Pages/workflow ít nhiễu.</p>
-              </div>
-              <a href="https://github.com/T-AITools/sandbox" target="_blank" rel="noreferrer">Mở repo →</a>
-            </article>
-            <article class="repo-card">
-              <div>
-                <span class="status docs">Org</span>
-                <h3>RKIX3/.github</h3>
-                <p>Quản lý profile tổ chức, guideline chung, issue/PR template và thông tin cộng đồng.</p>
-              </div>
-              <a href="https://github.com/RKIX3/.github" target="_blank" rel="noreferrer">Mở repo →</a>
-            </article>
-          </div>
-        </section>
-
-        <section id="architecture" class="section architecture-section">
-          <div class="section-heading compact">
-            <p class="eyebrow">Target architecture</p>
-            <h2>Thiết kế UI liên kết với dự án chính.</h2>
-          </div>
-          <div class="architecture-grid">
-            <article class="module-card">
-              <span>Frontend Core</span>
-              <h3>RKIX3 Studio Shell</h3>
-              <p>Sidebar, TopBar, BottomNav, 7 page center và card system từ app React/Vite làm khung chính.</p>
-              <ul>
-                <li>AI Workspace</li>
-                <li>Workspace / Project Memory</li>
-                <li>Code Studio</li>
-                <li>Build Center</li>
-              </ul>
-            </article>
-            <article class="module-card">
-              <span>Agent Brain</span>
-              <h3>Universal Project Compiler</h3>
-              <p>Nhận input đa dạng rồi xuất source, docs, tests, schema, scripts và README thay vì pseudocode.</p>
-              <ul>
-                <li>Document → Project</li>
-                <li>Repo → Upgrade</li>
-                <li>Source → Refactor</li>
-                <li>Legacy → Migration</li>
-              </ul>
-            </article>
-            <article class="module-card">
-              <span>Runtime</span>
-              <h3>Sandbox Execution</h3>
-              <p>Chạy install, test, build, preview và ghi log trong môi trường tách biệt trước khi merge/deploy.</p>
-              <ul>
-                <li>Task queue</li>
-                <li>Build log</li>
-                <li>Error overlay</li>
-                <li>Preview URL</li>
-              </ul>
-            </article>
-            <article class="module-card">
-              <span>Delivery</span>
-              <h3>GitHub Automation</h3>
-              <p>Pull request, Actions, Pages, release artifact và profile tổ chức giúp RKIX3 có đường phát hành rõ.</p>
-              <ul>
-                <li>GitHub Pages</li>
-                <li>PR templates</li>
-                <li>Vercel/Railway hooks</li>
-                <li>Security notes</li>
-              </ul>
-            </article>
-          </div>
-        </section>
-
-        <section id="workflow" class="section workflow-section">
-          <div class="section-heading compact">
-            <p class="eyebrow">End-to-end flow</p>
-            <h2>Luồng thống nhất cho RKIX3.</h2>
-          </div>
-          <div class="flow">
-            <article><span>1</span><strong>Input</strong><p>Prompt, README, ảnh OCR, repo, docs hoặc issue.</p></article>
-            <article><span>2</span><strong>Planner</strong><p>Agent phân loại yêu cầu và chọn template/stack.</p></article>
-            <article><span>3</span><strong>Coder</strong><p>Tạo hoặc chỉnh source thật trong workspace.</p></article>
-            <article><span>4</span><strong>Sandbox</strong><p>Install, test, build, preview và thu log.</p></article>
-            <article><span>5</span><strong>Review</strong><p>Kiểm lỗi, bảo mật, secrets, TODO và docs.</p></article>
-            <article><span>6</span><strong>Deploy</strong><p>GitHub Pages, Vercel, Railway hoặc export ZIP.</p></article>
-          </div>
-        </section>
-
-        <section id="androidx" class="section split-section">
+    <main id="top">
+      <section class="repo-masthead" aria-label="Repository masthead">
+        <div class="repo-title-row">
           <div>
-            <p class="eyebrow">AndroidX docs module</p>
-            <h2>Giữ AndroidX như mẫu “library contribution workflow”.</h2>
-            <p>
-              Phần AndroidX vẫn hữu ích cho RKIX3 nếu đặt đúng vị trí: làm template docs cho
-              các thư viện lớn cần checkout nặng, build artifact cục bộ, chạy test, rồi upload review.
-            </p>
+            <div class="breadcrumb">
+              <a href="https://github.com/RKIX3" target="_blank" rel="noreferrer">RKIX3</a>
+              <span>/</span>
+              <strong>Rkix3.ai</strong>
+              <span class="visibility">Public</span>
+            </div>
+            <p class="repo-subtitle">AI Studio · Agent compiler · Sandbox runtime · GitHub Pages deploy</p>
           </div>
-          <div class="code-stack">
-            <pre><code>mkdir androidx-main
+          <div class="repo-buttons">
+            <a href="https://github.com/RKIX3/Rkix3.ai" target="_blank" rel="noreferrer">☆ Star</a>
+            <a href="https://github.com/RKIX3/Rkix3.ai/fork" target="_blank" rel="noreferrer">⑂ Fork</a>
+            <a class="green" href="#quickstart">Code ▾</a>
+          </div>
+        </div>
+
+        <nav class="repo-tabs" aria-label="Repository tabs">
+          <a class="active" href="#repo-readme">⌘ Code</a>
+          <a href="#ecosystem">⑉ Ecosystem</a>
+          <a href="#actions">▶ Actions</a>
+          <a href="#architecture">▦ Projects</a>
+          <a href="#androidx">⚑ Wiki</a>
+          <a href="#roadmap">☑ Roadmap</a>
+        </nav>
+      </section>
+
+      <section class="workspace-layout">
+        <div class="content-column">
+          <section id="quickstart" class="clone-card panel">
+            <div class="clone-head">
+              <div>
+                <strong>main</strong>
+                <span>Updated GitHub-style root page for RKIX3</span>
+              </div>
+              <a href="https://github.com/RKIX3/Rkix3.ai" target="_blank" rel="noreferrer">Go to file</a>
+            </div>
+            <div class="clone-body">
+              <div class="clone-url">
+                <span>HTTPS</span>
+                <code>https://github.com/RKIX3/Rkix3.ai.git</code>
+                <button type="button" aria-label="Sao chép clone URL">Copy</button>
+              </div>
+              <pre><code>git clone https://github.com/RKIX3/Rkix3.ai.git
+cd Rkix3.ai
+npm install
+npm run dev</code></pre>
+            </div>
+          </section>
+
+          <section class="file-browser panel" aria-label="RKIX3 file browser">
+            <div class="file-browser-head">
+              <div class="commit-avatar">R3</div>
+              <div>
+                <strong>RKIX3 system map</strong>
+                <span>Chốt trang gốc GitHub để nhìn repo, workflow và module rõ hơn.</span>
+              </div>
+              <a href="#roadmap">latest commit</a>
+            </div>
+            <ul class="file-list">
+              <li><span class="icon folder">▸</span><a href="#ecosystem">ecosystem/</a><small>Repo map: core, mirror, agent, runtime, org</small></li>
+              <li><span class="icon folder">▸</span><a href="#architecture">architecture/</a><small>Frontend Core, Agent Brain, Sandbox, Delivery</small></li>
+              <li><span class="icon folder">▸</span><a href="#actions">.github/workflows/</a><small>Build, preview, deploy GitHub Pages</small></li>
+              <li><span class="icon file">◇</span><a href="#androidx">docs/androidx-workflow.md</a><small>AndroidX checkout/build/test/contribute template</small></li>
+              <li><span class="icon file">◇</span><a href="#repo-readme">README.md</a><small>Root documentation rendered below</small></li>
+            </ul>
+          </section>
+
+          <article id="repo-readme" class="readme panel">
+            <div class="readme-title">README.md</div>
+            <div class="readme-body">
+              <p class="badge-row">
+                <span>React/Vite</span>
+                <span>Mobile-first</span>
+                <span>Agent-ready</span>
+                <span>GitHub Pages</span>
+              </p>
+              <h1>RKIX3 System Hub</h1>
+              <p>
+                Trang gốc này được thiết kế lại theo bố cục GitHub repository để bạn nhìn thấy ngay:
+                repo nào là lõi, repo nào là agent, repo nào là sandbox, workflow nào deploy được và
+                tài liệu nào có thể dùng làm mẫu phát triển RKIX3.
+              </p>
+
+              <div class="readme-grid" id="ecosystem">
+                <article>
+                  <span>Core UI</span>
+                  <h3>RKIX3/Rkix3.ai</h3>
+                  <p>Source of truth cho app React/Vite: AI Workspace, Code Studio, Build Center, Library Hub.</p>
+                  <a href="https://github.com/RKIX3/Rkix3.ai" target="_blank" rel="noreferrer">Open core repo →</a>
+                </article>
+                <article>
+                  <span>Agent Spec</span>
+                  <h3>Huynhthuongg/AGENTS.md</h3>
+                  <p>Universal Project Compiler: tài liệu, repo, README, OCR hoặc prompt → project runnable.</p>
+                  <a href="https://github.com/Huynhthuongg/AGENTS.md" target="_blank" rel="noreferrer">Open agent repo →</a>
+                </article>
+                <article>
+                  <span>Runtime</span>
+                  <h3>Huynhthuongg/Sanbox</h3>
+                  <p>Sandbox để chạy install, test, build, preview và log trước khi merge/deploy.</p>
+                  <a href="https://github.com/Huynhthuongg/Sanbox" target="_blank" rel="noreferrer">Open sandbox →</a>
+                </article>
+                <article>
+                  <span>Organization</span>
+                  <h3>RKIX3/.github</h3>
+                  <p>Profile, templates, guideline và thông tin cộng đồng cho toàn bộ hệ sinh thái RKIX3.</p>
+                  <a href="https://github.com/RKIX3/.github" target="_blank" rel="noreferrer">Open org config →</a>
+                </article>
+              </div>
+
+              <h2 id="architecture">Target architecture</h2>
+              <div class="architecture-table">
+                <div><strong>Frontend Core</strong><span>RKIX3 Studio Shell, pages, cards, project memory.</span></div>
+                <div><strong>Agent Brain</strong><span>Planner, Architect, Coder, Reviewer, Builder, Tester, Deploy.</span></div>
+                <div><strong>Sandbox Runtime</strong><span>Task queue, build log, preview URL, artifact export.</span></div>
+                <div><strong>GitHub Delivery</strong><span>PR, Actions, Pages, issue templates, release notes.</span></div>
+              </div>
+
+              <h2 id="actions">GitHub Actions flow</h2>
+              <div class="actions-flow">
+                <span>Checkout</span>
+                <span>Install</span>
+                <span>Test</span>
+                <span>Build</span>
+                <span>Preview</span>
+                <span>Deploy</span>
+              </div>
+
+              <h2 id="androidx">AndroidX docs module</h2>
+              <p>
+                AndroidX được giữ như template docs cho thư viện lớn: checkout bằng repo, sync code,
+                mở Android Studio, tạo Maven artifact cục bộ và upload review.
+              </p>
+              <pre><code>mkdir androidx-main
 cd androidx-main
 repo init -u https://android.googlesource.com/platform/manifest \
   -b androidx-main --partial-clone \
   --clone-filter=blob:limit=10M
-repo sync -j8 -c</code></pre>
-            <pre><code>cd path/to/checkout/frameworks/support
+repo sync -j8 -c
+cd frameworks/support
 ANDROIDX_PROJECTS=MAIN ./gradlew studio
 ./gradlew createArchive</code></pre>
-            <a class="inline-link" href="https://chromium.googlesource.com/aosp/platform/frameworks/support/+/refs/heads/androidx-main/README.md" target="_blank" rel="noreferrer">Đọc AndroidX README gốc →</a>
-          </div>
-        </section>
 
-        <section id="roadmap" class="section roadmap-section">
-          <div class="section-heading compact">
-            <p class="eyebrow">Action plan</p>
-            <h2>Nên làm tiếp cái gì để RKIX3 phát triển được?</h2>
-          </div>
-          <div class="roadmap">
-            <article class="done">
-              <span>Now</span>
-              <h3>Chốt repo chính</h3>
-              <p>Dùng <strong>RKIX3/Rkix3.ai</strong> làm source of truth cho UI app. Repo cá nhân chỉ làm nơi thử nghiệm.</p>
-            </article>
-            <article>
-              <span>Next</span>
-              <h3>Đưa agent spec vào app</h3>
-              <p>Tạo trang “Agent Center” hiển thị mode Project Generation, Upgrade, Refactor, Migration.</p>
-            </article>
-            <article>
-              <span>Next</span>
-              <h3>Nối sandbox runtime</h3>
-              <p>Build Center cần hiển thị queue, logs, test result, preview link và artifact export.</p>
-            </article>
-            <article>
-              <span>Later</span>
-              <h3>Chuẩn hoá deploy</h3>
-              <p>GitHub Actions cho static preview trước; backend proxy/API key bảo vệ sau.</p>
-            </article>
-          </div>
-        </section>
-      </main>
-    </div>
+              <h2 id="roadmap">Roadmap</h2>
+              <ul class="task-list">
+                <li><input type="checkbox" checked disabled /> Chốt `RKIX3/Rkix3.ai` làm repo chính cho UI.</li>
+                <li><input type="checkbox" checked disabled /> Đưa ecosystem map lên trang gốc GitHub-style.</li>
+                <li><input type="checkbox" disabled /> Thêm Agent Center vào app chính.</li>
+                <li><input type="checkbox" disabled /> Nối Sandbox runtime vào Build Center.</li>
+                <li><input type="checkbox" disabled /> Chuẩn hoá deploy bằng GitHub Actions + Pages.</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+
+        <aside class="repo-sidebar" aria-label="Repository sidebar">
+          <section class="side-panel about">
+            <h2>About</h2>
+            <p>Trang gốc GitHub-style cho RKIX3: gom UI, agent, sandbox, docs và deployment thành một bản đồ dễ đọc.</p>
+            <div class="topic-list">
+              <span>rkix3</span><span>ai-studio</span><span>agents</span><span>sandbox</span><span>github-pages</span>
+            </div>
+            <a href="https://github.com/RKIX3/Rkix3.ai" target="_blank" rel="noreferrer">github.com/RKIX3/Rkix3.ai</a>
+          </section>
+
+          <section class="side-panel">
+            <h2>Repository roles</h2>
+            <dl class="role-list">
+              <div><dt>Core</dt><dd>RKIX3/Rkix3.ai</dd></div>
+              <div><dt>Mirror</dt><dd>Huynhthuongg/Rkix3.ai</dd></div>
+              <div><dt>Agent</dt><dd>AGENTS.md + AGENTS.RKIX3</dd></div>
+              <div><dt>Runtime</dt><dd>Sanbox + sandbox template</dd></div>
+            </dl>
+          </section>
+
+          <section class="side-panel release-card">
+            <h2>Latest release</h2>
+            <strong>v0.1 GitHub root redesign</strong>
+            <p>Thiết kế lại phần góc/trang gốc theo ngôn ngữ GitHub để trình bày repo rõ hơn.</p>
+          </section>
+
+          <section class="side-panel contributors">
+            <h2>Contributors</h2>
+            <div class="avatars" aria-label="Contributors">
+              <span>RK</span><span>AI</span><span>SB</span><span>GH</span>
+            </div>
+          </section>
+        </aside>
+      </section>
+    </main>
   </body>
 </html>

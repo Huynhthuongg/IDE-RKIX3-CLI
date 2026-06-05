@@ -460,9 +460,9 @@ Tạo một AI IDE hoạt động tương tự Lovable, Bolt hoặc Replit AI v�
 
 ---
 
-## RKIX3 System Hub
+## RKIX3 GitHub-style root page
 
-This repository now includes a lightweight static **RKIX3 System Hub**. The page links the RKIX3 ecosystem into one UI map: the main React/Vite app, agent specifications, sandbox runtime, GitHub automation, and AndroidX-style library workflow documentation.
+This repository now includes a lightweight static **RKIX3 GitHub-style root page**. The page redesigns the top/root experience to feel closer to a GitHub repository page: global header, repository masthead, tabs, clone panel, file browser, rendered README, sidebar metadata, repository roles, Actions flow, and AndroidX-style workflow notes.
 
 Open `index.html` directly in a browser, or serve the folder locally:
 
