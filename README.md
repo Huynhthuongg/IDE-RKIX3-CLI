@@ -457,3 +457,17 @@ Chức năng tối thiểu:
 Mục tiêu MVP:
 
 Tạo một AI IDE hoạt động tương tự Lovable, Bolt hoặc Replit AI với quy trình Chat → Build → Preview hoàn chỉnh.
+
+---
+
+## Static documentation page
+
+This repository now includes a lightweight static documentation page inspired by the clean, code-first layout of [agents.md](https://agents.md/). It summarizes the AndroidX contribution workflow in Vietnamese, including checkout setup, Android Studio launch commands, build/test notes, and Gerrit upload steps.
+
+Open `index.html` directly in a browser, or serve the folder locally:
+
+```bash
+python3 -m http.server 4173
+```
+
+Then visit `http://localhost:4173`.
