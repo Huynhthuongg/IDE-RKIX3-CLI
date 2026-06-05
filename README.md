@@ -460,9 +460,9 @@ Tạo một AI IDE hoạt động tương tự Lovable, Bolt hoặc Replit AI v�
 
 ---
 
-## RKIX3 GitHub-style root page
+## RKIX3 IDE & CLI page
 
-This repository now includes a lightweight static **RKIX3 GitHub-style root page**. The page redesigns the top/root experience to feel closer to a GitHub repository page: global header, repository masthead, tabs, clone panel, file browser, rendered README, sidebar metadata, repository roles, Actions flow, and AndroidX-style workflow notes.
+This repository now includes a lightweight static **RKIX3 IDE & CLI** page. The page presents RKIX3 as an AI coding workspace with chat, CLI command center, generated source files, live preview, agent pipeline, build runtime, integrations, and deploy workflow.
 
 Open `index.html` directly in a browser, or serve the folder locally:
 
