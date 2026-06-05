@@ -457,3 +457,17 @@ Chức năng tối thiểu:
 Mục tiêu MVP:
 
 Tạo một AI IDE hoạt động tương tự Lovable, Bolt hoặc Replit AI với quy trình Chat → Build → Preview hoàn chỉnh.
+
+---
+
+## RKIX3 System Hub
+
+This repository now includes a lightweight static **RKIX3 System Hub**. The page links the RKIX3 ecosystem into one UI map: the main React/Vite app, agent specifications, sandbox runtime, GitHub automation, and AndroidX-style library workflow documentation.
+
+Open `index.html` directly in a browser, or serve the folder locally:
+
+```bash
+python3 -m http.server 4173
+```
+
+Then visit `http://localhost:4173`.
